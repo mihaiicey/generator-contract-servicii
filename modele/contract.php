@@ -186,7 +186,6 @@ $html2="
 ";
 
 $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4']);
-$mpdf->SetProtection(array('print'));
 $mpdf->WriteHTML($html);
 $mpdf->AddPageByArray(array(
     'condition' => 'NEXT-ODD',
