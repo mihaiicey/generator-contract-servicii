@@ -29,6 +29,7 @@ require_once ('../includes/mpdf/vendor/autoload.php');
     $c_datametfact = $_POST["datadefacturare"];
     $c_pret = $_POST['pret'];
     $c_anexatext = $_POST['anexainclude'];
+    $C_moneda = $_POST['selectaremoneda'];
 
 
 $html = "
@@ -171,6 +172,9 @@ $html2="
 <p>&nbsp;</p>
 <p style='text-align: left;'>$c_anexatext</p>
 <p>&nbsp;</p>
+<p style='text-align: left;'><strong>Total costuri:</strong> $c_pret $C_moneda</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <table style='width: 100%;'>
 <tbody>
 <tr style='width: 50%;'>
@@ -183,6 +187,7 @@ $html2="
 </tr>
 </tbody>
 </table>
+
 ";
 
 $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4']);
